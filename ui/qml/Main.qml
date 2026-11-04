@@ -251,19 +251,24 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 spacing: 14
                 // щит сетевого режима с анимацией смены
-                Row {
+                Item {
                     id: netRow
-                    spacing: 5
-                    Icon { name: "shield"; width: 14; height: 14
-                           fg: core.statusInfo.network === "offline" ? Theme.ok
-                               : (core.statusInfo.network === "online" ? Theme.warn : Theme.accent)
-                           anchors.verticalCenter: parent.verticalCenter
-                           Behavior on fg { ColorAnimation { duration: Theme.dur(420) } } }
-                    Label {
-                        id: netLbl
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: core.statusInfo.network.toUpperCase()
-                        color: Theme.textSecondary; font.family: Theme.fontMono; font.pixelSize: 10 * Theme.uiScale
+                    height: 18
+                    width: netRowLayout.width
+                    Row {
+                        id: netRowLayout
+                        anchors.left: parent.left; anchors.verticalCenter: parent.verticalCenter
+                        spacing: 5
+                        Icon { name: "shield"; width: 14; height: 14
+                               fg: core.statusInfo.network === "offline" ? Theme.ok
+                                   : (core.statusInfo.network === "online" ? Theme.warn : Theme.accent)
+                               Behavior on fg { ColorAnimation { duration: Theme.dur(420) } } }
+                        Label {
+                            id: netLbl
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: core.statusInfo.network.toUpperCase()
+                            color: Theme.textSecondary; font.family: Theme.fontMono; font.pixelSize: 10 * Theme.uiScale
+                        }
                     }
                     MouseArea {
                         anchors.fill: parent; hoverEnabled: true
