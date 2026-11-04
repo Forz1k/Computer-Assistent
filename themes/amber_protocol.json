@@ -1,0 +1,27 @@
+{
+  "id": "amber_protocol",
+  "name": "Amber Protocol",
+  "colors": {
+    "bg_void": "#0B0805",
+    "bg_base": "#120D08",
+    "surface_glass": "#1C150E",
+    "surface_glass_alpha": 0.62,
+    "surface_raise": "#251C12",
+    "stroke_hair": "#3A2C1A",
+    "accent_primary": "#FFB65C",
+    "accent_second": "#FFE1A8",
+    "text_primary": "#FFF3E0",
+    "text_secondary": "#C6AB8B",
+    "text_muted": "#8A735B",
+    "ok": "#8BD96C",
+    "warn": "#FFC857",
+    "danger": "#FF6C5C"
+  },
+  "glow": { "radius": 30, "opacity": 0.20 },
+  "font_family": "Inter, Manrope, 'Segoe UI', 'Noto Sans', sans-serif",
+  "font_mono": "'JetBrains Mono', 'Consolas', monospace",
+  "radii": { "s": 12, "m": 18, "l": 28 },
+  "motion_scale": 1.0,
+  "particle_count": 100,
+  "plasma_enabled": true
+}

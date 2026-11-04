@@ -1,0 +1,27 @@
+{
+  "id": "reactor_cyan",
+  "name": "Reactor Cyan",
+  "colors": {
+    "bg_void": "#05080E",
+    "bg_base": "#080D16",
+    "surface_glass": "#0E1622",
+    "surface_glass_alpha": 0.62,
+    "surface_raise": "#141F2E",
+    "stroke_hair": "#1E2C40",
+    "accent_primary": "#38E1FF",
+    "accent_second": "#FFB65C",
+    "text_primary": "#E8F3FF",
+    "text_secondary": "#93A9C6",
+    "text_muted": "#5B6E8A",
+    "ok": "#3DDC97",
+    "warn": "#FFC857",
+    "danger": "#FF5C6C"
+  },
+  "glow": { "radius": 32, "opacity": 0.22 },
+  "font_family": "Inter, Manrope, 'Segoe UI', 'Noto Sans', sans-serif",
+  "font_mono": "'JetBrains Mono', 'Consolas', monospace",
+  "radii": { "s": 12, "m": 18, "l": 28 },
+  "motion_scale": 1.0,
+  "particle_count": 120,
+  "plasma_enabled": true
+}
