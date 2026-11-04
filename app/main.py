@@ -163,7 +163,7 @@ class DemoDriver(QObject):
             self.levels.feed(chunk.astype(np.float32))
 
     def ask(self, user_text: str) -> None:
-        from core.demo import DEMO_CONVERSATION
+        from core.demo import DEMO_CONVERSATION, demo_token_stream
         self.chat.add("user", user_text, demo=True)
         self._tokens = list(demo_token_stream(self._idx))
         self._pos = 0

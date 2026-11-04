@@ -2,6 +2,7 @@
 import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
+import QtQuick.Layouts
 
 Rectangle {
     id: drawer

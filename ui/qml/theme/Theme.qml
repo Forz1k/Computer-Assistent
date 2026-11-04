@@ -1,4 +1,5 @@
 // Общие стили из темы (привязаны к context-объекту `theme` из Python).
+pragma Singleton
 import QtQuick
 
 Item {

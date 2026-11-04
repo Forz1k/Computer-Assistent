@@ -252,6 +252,7 @@ ApplicationWindow {
                 spacing: 14
                 // щит сетевого режима с анимацией смены
                 Row {
+                    id: netRow
                     spacing: 5
                     Icon { name: "shield"; width: 14; height: 14
                            fg: core.statusInfo.network === "offline" ? Theme.ok
@@ -259,6 +260,7 @@ ApplicationWindow {
                            anchors.verticalCenter: parent.verticalCenter
                            Behavior on fg { ColorAnimation { duration: Theme.dur(420) } } }
                     Label {
+                        id: netLbl
                         anchors.verticalCenter: parent.verticalCenter
                         text: core.statusInfo.network.toUpperCase()
                         color: Theme.textSecondary; font.family: Theme.fontMono; font.pixelSize: 10 * Theme.uiScale
@@ -267,8 +269,8 @@ ApplicationWindow {
                         anchors.fill: parent; hoverEnabled: true
                         cursorShape: Qt.PointingHandCursor
                         onClicked: netMenu.popupAt(mapToItem(win.contentItem, mouseX, mouseY))
-                        Tooltip.visible: containsMouse; Tooltip.delay: 400
-                        Tooltip.text: "Сетевой режим: нажмите чтобы сменить"
+                        ToolTip.visible: containsMouse; ToolTip.delay: 400
+                        ToolTip.text: "Сетевой режим: нажмите чтобы сменить"
                     }
                 }
                 MenuPopup { id: netMenu }

@@ -93,6 +93,7 @@ Rectangle {
     Canvas {
         id: canvas
         anchors.fill: parent
+        property var _pool: []
         renderTarget: Canvas.Image
         onPaint: {
             var ctx = getContext("2d");
@@ -216,10 +217,10 @@ Rectangle {
 
             // ---- слой 5: частицы (пул фиксированный, без аллокаций в кадре) ----
             if (!reducedMotion && particles > 0) {
-                if (!canvas._pool) {
-                    canvas._pool = [];
+                if (_pool.length === 0) {
+                    _pool = [];
                     for (var c = 0; c < 120; c++) {
-                        canvas._pool.push({
+                        _pool.push({
                             a: Math.random() * 2 * Math.PI,
                             r: 0.5 + Math.random() * 0.45,
                             s: 0.15 + Math.random() * 0.5,
@@ -231,8 +232,8 @@ Rectangle {
                 var parX = reducedMotion ? 0 : mouseNorm.x * 6;
                 var parY = reducedMotion ? 0 : mouseNorm.y * 6;
                 ctx.fillStyle = colA;
-                for (var p = 0; p < Math.min(particles, canvas._pool.length); p++) {
-                    var pt = canvas._pool[p];
+                for (var p = 0; p < Math.min(particles, _pool.length); p++) {
+                    var pt = _pool[p];
                     var pa = pt.a + t * pt.s * 0.4;
                     var pr = pt.r * R;
                     var tw = 0.25 + 0.35 * Math.abs(Math.sin(t * 1.3 + pt.ph));

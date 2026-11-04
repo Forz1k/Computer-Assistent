@@ -117,7 +117,7 @@ GlassPanel {
             id: input
             width: parent.width
             enabled: !core.busy
-            onSubmit: panel.sendText(text)
+            onSubmitted: panel.sendText(text)
         }
     }
 }
