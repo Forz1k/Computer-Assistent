@@ -1,0 +1,28 @@
+{
+  "id": "nightfall_mono",
+  "name": "Nightfall Mono",
+  "note": "Low-glow theme for weak machines: no plasma, few particles.",
+  "colors": {
+    "bg_void": "#070809",
+    "bg_base": "#0B0D10",
+    "surface_glass": "#121519",
+    "surface_glass_alpha": 0.75,
+    "surface_raise": "#181C22",
+    "stroke_hair": "#262C36",
+    "accent_primary": "#B9C6D6",
+    "accent_second": "#7E8CA0",
+    "text_primary": "#E6EAF0",
+    "text_secondary": "#9AA6B6",
+    "text_muted": "#5D6876",
+    "ok": "#7FCBA0",
+    "warn": "#D6C08A",
+    "danger": "#D68A8A"
+  },
+  "glow": { "radius": 12, "opacity": 0.08 },
+  "font_family": "Inter, Manrope, 'Segoe UI', 'Noto Sans', sans-serif",
+  "font_mono": "'JetBrains Mono', 'Consolas', monospace",
+  "radii": { "s": 10, "m": 14, "l": 20 },
+  "motion_scale": 0.6,
+  "particle_count": 30,
+  "plasma_enabled": false
+}
