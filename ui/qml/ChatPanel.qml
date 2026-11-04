@@ -1,4 +1,5 @@
 // Правая панель: лента диалога + чипы-подсказки + поле ввода.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

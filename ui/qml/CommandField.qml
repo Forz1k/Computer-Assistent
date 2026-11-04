@@ -1,4 +1,5 @@
 // Поле ввода команды: glass-подложка, hairline, glow при фокусе.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

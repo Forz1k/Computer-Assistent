@@ -1,4 +1,5 @@
 // Тост-уведомление: появляется снизу, 3 с, fade+slide.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

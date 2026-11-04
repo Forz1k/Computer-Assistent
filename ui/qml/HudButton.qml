@@ -1,4 +1,5 @@
 // HUD-кнопка: hairline-обводка, glow по наведению/нажатию, press-scale 0.96.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

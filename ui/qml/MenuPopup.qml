@@ -1,4 +1,5 @@
 // Меню смены сетевого режима (щит в статус-баре).
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

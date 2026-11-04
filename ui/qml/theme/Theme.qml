@@ -39,7 +39,6 @@ Item {
 
     function ease() { return reducedMotion ? Easing.Linear : Easing.InOutCubic; }
     function dur(ms) { return reducedMotion ? Math.min(80, ms / 4) : ms; }
-}
 
     // синхронизация с Python-мостом
     function refresh() {

@@ -1,5 +1,6 @@
 // Сообщение ленты: user — тонкая реплика, assistant — glass-карточка.
 // Во время стриминга НЕ пересоздаём layout: текст дописывается в тот же Text.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 
@@ -58,17 +59,20 @@ Item {
 
         // --- тело ---
         GlassPanel {
+            id: bodyCard
             width: parent.width
             visible: msg.role !== "user"
             radius: Theme.rS
             alpha: msg.role === "system" ? 0.35 : Theme.glassAlpha
             glowBorder: msg.streaming
-            topPadding: 10; bottomPadding: msg.meta && msg.meta.ttft_ms ? 6 : 10
+            implicitHeight: body.implicitHeight + 20
 
             Text {
                 id: body
-                anchors.fill: parent
+                anchors.left: parent.left; anchors.right: parent.right
+                anchors.top: parent.top
                 anchors.margins: 10
+                width: bodyCard.width - 20
                 text: msg.content + (msg.streaming ? "▌" : "")
                 textFormat: msg.role === "assistant" ? Text.MarkdownText : Text.PlainText
                 wrapMode: Text.Wrap

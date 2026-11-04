@@ -1,4 +1,5 @@
 // Палитра команд (Ctrl+K): fuzzy-поиск по командам/темам/настройкам.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

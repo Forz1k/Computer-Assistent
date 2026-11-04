@@ -1,4 +1,5 @@
 // Иконки: только векторные Canvas-глифы (никаких растровых ассетов).
+import "theme"
 import QtQuick
 
 Item {

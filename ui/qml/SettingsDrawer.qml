@@ -1,4 +1,5 @@
 // Панель настроек: вкладки. Логика применения — в Python (core.setSetting).
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

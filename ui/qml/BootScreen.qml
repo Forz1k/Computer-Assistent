@@ -1,5 +1,6 @@
 // Boot-экран: реальные статусы компонентов + чек-лист установки.
 // Никакого фейкового прогресса: полоса = число завершённых проверок из Python.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 

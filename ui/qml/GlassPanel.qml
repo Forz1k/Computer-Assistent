@@ -1,4 +1,5 @@
 // Стеклянная панель: полупрозрачная подложка + волосяная обводка + мягкая тень.
+import "theme"
 import QtQuick
 import QtQuick.Effects
 
@@ -13,7 +14,6 @@ Rectangle {
     border.color: glowBorder ? Qt.rgba(Theme.accent.r, Theme.accent.g, Theme.accent.b, 0.35)
                              : Theme.hair
     border.width: hairline ? 1 : 0
-    radius: Theme.rM
 
     // верхний блик стекла
     Rectangle {

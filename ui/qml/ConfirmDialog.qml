@@ -1,4 +1,5 @@
 // Оверлей подтверждений опасных действий. Блокирующий, с таймаутом 30 с.
+import "theme"
 import QtQuick
 import QtQuick.Controls.Basic
 
