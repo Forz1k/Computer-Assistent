@@ -21,15 +21,15 @@ class LLMWorker(QThread):
         super().__init__(parent)
         self.client = client
         self.bus = bus
-        self._job: tuple[str, str, str, int] | None = None  # req_id, prompt, system, num_ctx
+        self._job: tuple[str, str, str, str, int] | None = None  # req,prompt,system,model,num_ctx
         self._cancel = False
 
-    @Slot(str, str, str, int)
-    def submit(self, request_id: str, prompt: str, system: str, num_ctx: int) -> None:
+    @Slot(str, str, str, str, int)
+    def submit(self, request_id: str, prompt: str, system: str, model: str, num_ctx: int) -> None:
         if self.isRunning():
             self.failed.emit(request_id, "Уже выполняется одна генерация — подождите или нажмите «Стоп».")
             return
-        self._job = (request_id, prompt, system, num_ctx)
+        self._job = (request_id, prompt, system, model, num_ctx)
         self._cancel = False
         self.start()
 
@@ -40,11 +40,12 @@ class LLMWorker(QThread):
     def run(self) -> None:  # QThread entry
         if not self._job:
             return
-        req_id, prompt, system, num_ctx = self._job
+        req_id, prompt, system, model, num_ctx = self._job
+        stats = None
         try:
             got_any = False
             for chunk, stats in self.client.generate_stream(
-                    self.client_model(), prompt, system, num_ctx,
+                    model, prompt, system, num_ctx,
                     cancel_flag=lambda: self._cancel):
                 got_any = True
                 self.token.emit(req_id, chunk)
@@ -62,8 +63,3 @@ class LLMWorker(QThread):
             self.failed.emit(req_id, str(e))
         except Exception as e:  # не роняем приложение
             self.failed.emit(req_id, f"Сбой генерации: {type(e).__name__}: {e}")
-
-    def client_model(self) -> str:
-        return self.model or ""
-
-    model: str = ""

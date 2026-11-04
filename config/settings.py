@@ -58,6 +58,7 @@ DEFAULTS: dict[str, Any] = {
         "enabled": True,
         "sapi_fallback": True,
     },
+    "stt": {"model_path": ""},          # путь к vosk-model-small-ru-*
     "audio": {
         "input_device": None,
         "output_device": None,
